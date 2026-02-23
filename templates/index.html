@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Gerador de Tags</title>
+
+<style>
+
+:root {
+    --cor-principal: #2563eb;
+    --cor-principal-hover: #1d4ed8;
+    --cor-fundo: #f5f7fb;
+    --cor-card: #ffffff;
+    --cor-texto: #1f2937;
+    --cor-borda: #e5e7eb;
+    --cor-sucesso: #16a34a;
+    --cor-erro: #dc2626;
+}
+
+/* Layout geral */
+
+body {
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Barra superior */
+
+.header {
+    background: var(--cor-principal);
+    color:white;
+    padding:18px 30px;
+    font-size:22px;
+    font-weight:600;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Container central */
+
+.container {
+
+    max-width:800px;
+    margin:50px auto;
+    padding:20px;
+}
+
+
+/* Card */
+
+.card {
+
+    background:var(--cor-card);
+
+    border-radius:14px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    padding:30px;
+
+    border:1px solid var(--cor-borda);
+
+}
+
+
+/* Titulo */
+
+.titulo {
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+
+/* Label */
+
+label {
+
+    font-weight:600;
+
+    display:block;
+
+    margin-bottom:8px;
+
+}
+
+
+/* Caixa texto */
+
+textarea {
+
+    width:100%;
+
+    height:170px;
+
+    resize:none;
+
+    border-radius:10px;
+
+    border:1px solid var(--cor-borda);
+
+    padding:15px;
+
+    font-size:16px;
+
+    transition:0.2s;
+
+    outline:none;
+
+}
+
+textarea:focus {
+
+    border-color:var(--cor-principal);
+
+    box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+
+}
+
+
+/* Botoes */
+
+.botoes {
+
+    margin-top:20px;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+/* Botao principal */
+
+.botao {
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px 20px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:0.2s;
+
+}
+
+
+.botao-primario {
+
+    background:var(--cor-principal);
+
+    color:white;
+
+}
+
+.botao-primario:hover {
+
+    background:var(--cor-principal-hover);
+
+}
+
+
+.botao-secundario {
+
+    background:#e5e7eb;
+
+}
+
+.botao-secundario:hover {
+
+    background:#d1d5db;
+
+}
+
+
+/* Status */
+
+.status {
+
+    margin-top:20px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    display:none;
+
+    font-weight:500;
+
+}
+
+
+.status-ok {
+
+    background:#ecfdf5;
+
+    border:1px solid #86efac;
+
+    color:var(--cor-sucesso);
+
+}
+
+
+.status-erro {
+
+    background:#fef2f2;
+
+    border:1px solid #fecaca;
+
+    color:var(--cor-erro);
+
+}
+
+
+/* Rodape pequeno */
+
+.info {
+
+    margin-top:10px;
+
+    font-size:13px;
+
+    color:#6b7280;
+
+}
+
+
+/* Responsivo */
+
+@media(max-width:600px){
+
+.container{
+margin:20px;
+}
+
+.card{
+padding:20px;
+}
+
+.header{
+font-size:18px;
+padding:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="header">
+Sistema de Impressão de Tags
+</div>
+
+
+
+<div class="container">
+
+<div class="card">
+
+<div class="titulo">
+Gerar Nova Tag
+</div>
+
+
+<label>Conteúdo da Tag</label>
+
+<textarea id="tagText"
+placeholder="Digite o conteúdo da etiqueta..."></textarea>
+
+
+<div class="info">
+
+Pressione <b>Ctrl + Enter</b> para imprimir rapidamente
+
+</div>
+
+
+
+<div class="botoes">
+
+<button id="btnPrint" class="botao botao-primario">
+
+Gerar Tag
+
+</button>
+
+
+<button id="btnClear" class="botao botao-secundario">
+
+Limpar
+
+</button>
+
+</div>
+
+
+<div id="status" class="status"></div>
+
+
+</div>
+
+</div>
+
+
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>
