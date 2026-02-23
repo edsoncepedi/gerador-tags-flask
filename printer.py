@@ -8,7 +8,12 @@ def print_tag(text: str) -> None:
 
     try:
         mysocket.connect((host, port)) #connecting to host
-        mysocket.send(f"^XA^PW400^LL240^FO30,100^A0N,45,45^FD{text}^FS^XZ".encode())
+        if len(text) <= 16:
+            tamanho = 45 
+        if len(text) > 16:
+            tamanho = 30
+        
+        mysocket.send(f"^XA^PW400^LL240^FO30,100^A0N,{tamanho},{tamanho}^FD{text}^FS^XZ".encode())
     except Exception as e:
         print(f"Erro ao enviar para impressora: {e}")
         raise
