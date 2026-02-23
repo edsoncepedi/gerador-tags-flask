@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -9,251 +11,257 @@
 <style>
 
 :root {
-    --cor-principal: #2563eb;
-    --cor-principal-hover: #1d4ed8;
-    --cor-fundo: #f5f7fb;
-    --cor-card: #ffffff;
-    --cor-texto: #1f2937;
-    --cor-borda: #e5e7eb;
-    --cor-sucesso: #16a34a;
-    --cor-erro: #dc2626;
+    --azul:#2563eb;
+    --azul-hover:#1d4ed8;
+    --bg:#f4f6fb;
+    --card:#ffffff;
+    --borda:#e5e7eb;
+    --texto:#111827;
 }
 
-/* Layout geral */
+/* RESET */
 
-body {
-    margin:0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--cor-fundo);
-    color: var(--cor-texto);
-}
-
-/* Barra superior */
-
-.header {
-    background: var(--cor-principal);
-    color:white;
-    padding:18px 30px;
-    font-size:22px;
-    font-weight:600;
-    box-shadow:0 2px 6px rgba(0,0,0,0.15);
-}
-
-/* Container central */
-
-.container {
-
-    max-width:800px;
-    margin:50px auto;
-    padding:20px;
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 
-/* Card */
+/* BODY CENTRALIZADO */
 
-.card {
+body{
 
-    background:var(--cor-card);
+font-family:Segoe UI,Arial,sans-serif;
 
-    border-radius:14px;
+background:var(--bg);
 
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+min-height:100vh;
 
-    padding:30px;
+display:flex;
 
-    border:1px solid var(--cor-borda);
+flex-direction:column;
 
 }
 
 
-/* Titulo */
+/* HEADER */
 
-.titulo {
+.header{
 
-    font-size:22px;
+background:var(--azul);
 
-    margin-bottom:20px;
+color:white;
 
-    font-weight:600;
+padding:18px;
 
-}
+font-size:20px;
 
+font-weight:600;
 
-/* Label */
+text-align:center;
 
-label {
-
-    font-weight:600;
-
-    display:block;
-
-    margin-bottom:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.15);
 
 }
 
 
-/* Caixa texto */
+/* ÁREA CENTRAL */
 
-textarea {
+.main{
 
-    width:100%;
+flex:1;
 
-    height:170px;
+display:flex;
 
-    resize:none;
+justify-content:center;
 
-    border-radius:10px;
+align-items:center;
 
-    border:1px solid var(--cor-borda);
-
-    padding:15px;
-
-    font-size:16px;
-
-    transition:0.2s;
-
-    outline:none;
-
-}
-
-textarea:focus {
-
-    border-color:var(--cor-principal);
-
-    box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+padding:20px;
 
 }
 
 
-/* Botoes */
+/* CARD */
 
-.botoes {
+.card{
 
-    margin-top:20px;
+background:var(--card);
 
-    display:flex;
+border-radius:16px;
 
-    gap:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 
-}
+padding:30px;
 
+width:100%;
 
-/* Botao principal */
+max-width:600px;
 
-.botao {
-
-    border:none;
-
-    border-radius:10px;
-
-    padding:12px 20px;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    font-weight:600;
-
-    transition:0.2s;
+border:1px solid var(--borda);
 
 }
 
 
-.botao-primario {
+/* TITULO */
 
-    background:var(--cor-principal);
+.titulo{
 
-    color:white;
+font-size:22px;
 
-}
+margin-bottom:20px;
 
-.botao-primario:hover {
+font-weight:600;
 
-    background:var(--cor-principal-hover);
-
-}
-
-
-.botao-secundario {
-
-    background:#e5e7eb;
-
-}
-
-.botao-secundario:hover {
-
-    background:#d1d5db;
+text-align:center;
 
 }
 
 
-/* Status */
+/* TEXTAREA */
 
-.status {
+textarea{
 
-    margin-top:20px;
+width:100%;
 
-    padding:12px;
+height:160px;
 
-    border-radius:10px;
+border-radius:10px;
 
-    display:none;
+border:1px solid var(--borda);
 
-    font-weight:500;
+padding:15px;
 
-}
+font-size:16px;
 
+resize:none;
 
-.status-ok {
+outline:none;
 
-    background:#ecfdf5;
-
-    border:1px solid #86efac;
-
-    color:var(--cor-sucesso);
+transition:0.2s;
 
 }
 
 
-.status-erro {
+textarea:focus{
 
-    background:#fef2f2;
+border-color:var(--azul);
 
-    border:1px solid #fecaca;
-
-    color:var(--cor-erro);
+box-shadow:0 0 0 3px rgba(37,99,235,0.15);
 
 }
 
 
-/* Rodape pequeno */
+/* BOTÕES */
 
-.info {
+.botoes{
 
-    margin-top:10px;
+margin-top:20px;
 
-    font-size:13px;
+display:flex;
 
-    color:#6b7280;
+gap:10px;
+
+justify-content:center;
+
+flex-wrap:wrap;
 
 }
 
 
-/* Responsivo */
+button{
+
+border:none;
+
+border-radius:10px;
+
+padding:12px 20px;
+
+font-size:16px;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:0.2s;
+
+}
+
+
+.primario{
+
+background:var(--azul);
+
+color:white;
+
+}
+
+
+.primario:hover{
+
+background:var(--azul-hover);
+
+}
+
+
+.secundario{
+
+background:#e5e7eb;
+
+}
+
+
+.secundario:hover{
+
+background:#d1d5db;
+
+}
+
+
+/* STATUS */
+
+.status{
+
+margin-top:15px;
+
+padding:10px;
+
+border-radius:10px;
+
+display:none;
+
+text-align:center;
+
+}
+
+
+/* MOBILE OTIMIZADO */
 
 @media(max-width:600px){
 
-.container{
-margin:20px;
-}
-
 .card{
+
 padding:20px;
+
 }
 
-.header{
+textarea{
+
+height:200px;
+
 font-size:18px;
-padding:15px;
+
+}
+
+button{
+
+width:100%;
+
+font-size:18px;
+
+padding:14px;
+
 }
 
 }
@@ -263,54 +271,56 @@ padding:15px;
 </head>
 
 
+
 <body>
 
 
 <div class="header">
+
 Sistema de Impressão de Tags
+
 </div>
 
 
 
-<div class="container">
+<div class="main">
 
 <div class="card">
 
+
 <div class="titulo">
-Gerar Nova Tag
+
+Gerar Tag
+
 </div>
 
 
-<label>Conteúdo da Tag</label>
 
 <textarea id="tagText"
-placeholder="Digite o conteúdo da etiqueta..."></textarea>
+placeholder="Digite o conteúdo da etiqueta...">
 
-
-<div class="info">
-
-Pressione <b>Ctrl + Enter</b> para imprimir rapidamente
-
-</div>
+</textarea>
 
 
 
 <div class="botoes">
 
-<button id="btnPrint" class="botao botao-primario">
+<button id="btnPrint" class="primario">
 
 Gerar Tag
 
 </button>
 
 
-<button id="btnClear" class="botao botao-secundario">
+<button id="btnClear" class="secundario">
 
 Limpar
 
 </button>
 
+
 </div>
+
 
 
 <div id="status" class="status"></div>
@@ -325,4 +335,5 @@ Limpar
 <script src="/static/app.js"></script>
 
 </body>
+
 </html>
